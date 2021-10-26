@@ -1,0 +1,10 @@
+datasource:
+  router:
+    items:
+    - tenant: 00001
+      tag: dev189
+      type: commodity
+    - tenant: 00001
+      tag: dev189
+      type: oms
+datasource-type : erp

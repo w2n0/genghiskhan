@@ -1,0 +1,3 @@
+rewriteGeneric=RewriteGenericFilter
+globalException=GlobalExceptionFilter
+traceId=DubboTraceIdFilter

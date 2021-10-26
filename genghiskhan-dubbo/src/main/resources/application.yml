@@ -1,0 +1,10 @@
+dubbo:
+  consumer:
+    router:
+      enable: false
+      rule: condition
+      param: tenant_id
+      values: 00001,00002,00003
+      routers:
+        - 192.168.30.230
+        - 192.168.1.47

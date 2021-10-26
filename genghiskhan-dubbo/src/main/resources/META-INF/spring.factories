@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+cn.w2n0.genghiskhan.dubbo.filter.SpringContextUtil,\
+cn.w2n0.genghiskhan.dubbo.extend.TenantEvent,\
+cn.w2n0.genghiskhan.dubbo.router.RouterProperties

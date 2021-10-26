@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+cn.w2n0.genghiskhan.datasource.DynamicDataSourceAutoConfiguration,\
+cn.w2n0.genghiskhan.datasource.DataSourceCreator
