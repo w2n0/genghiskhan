@@ -23,7 +23,7 @@ public class YmlUtils {
      * 支持解析 yml文件中的 ${} 占位符
      * @param ymlInfo yml内容
      * @param key key
-     * @return
+     * @return 值
      */
     public static Object getValue(String ymlInfo,String key){
         Yaml yaml = new Yaml();
@@ -52,8 +52,8 @@ public class YmlUtils {
     /**
      * 获取yml字符串的key值
      * @param value yml 字符串
-     * @param keys
-     * @return
+     * @param keys key
+     * @return 键值对
      */
     public static Map<String, String> getYmlByString(String value, String... keys) {
         result = new HashMap<>(10);

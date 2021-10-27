@@ -19,7 +19,6 @@ import java.util.regex.Pattern;
 /**
  * excel 文件存储工具
  * @author 无量
-
  */
 @Slf4j
 public class ExcelUtils {
@@ -224,10 +223,11 @@ public class ExcelUtils {
         return adapter(t, wb);
     }
 
+
     /**
-     * @param filename "C:\\Users\\baby\\Downloads\\"+ UuidUtil.getUUID()+".xls"
-     * @param workbook
-     * @return
+     * @param filename 文件名
+     * @param workbook 工作表
+     * @throws IOException io异常
      */
     public static void toFile(String filename, Workbook workbook) throws IOException {
         FileOutputStream fileOut = new FileOutputStream(filename);

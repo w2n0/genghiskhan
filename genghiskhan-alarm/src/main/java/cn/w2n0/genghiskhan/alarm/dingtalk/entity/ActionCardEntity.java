@@ -7,7 +7,7 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author 无量
- * @date 2021/10/22 14:30
+ * date 2021/10/22 14:30
  */
 @Getter
 public class ActionCardEntity implements MsgEntity{

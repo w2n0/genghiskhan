@@ -15,7 +15,7 @@ import java.util.Map;
  * RSA 非对称加密
  *
  * @author 无量
- * @date 2021-01-12
+ * date 2021-01-12
  */
 public class RsaUtil {
 
@@ -28,8 +28,10 @@ public class RsaUtil {
      */
     private static final Map<Integer, String> KEY_MAP = new HashMap<>();
 
+
     /**
-     * 随机生成密钥对。
+     *
+     * @throws NoSuchAlgorithmException 算法异常
      */
     public static void genKeyPair() throws NoSuchAlgorithmException {
         // KeyPairGenerator类用于生成公钥和私钥对，基于RSA算法生成对象

@@ -17,7 +17,7 @@ import java.util.Properties;
 /**
  * 数据源生成器
  * @author 无量
- * @date 2021/10/20 14:24
+ * date 2021/10/20 14:24
  */
 public class DataSourceCreator {
     private final String SECRETKEY = "erp21202wms2oms2";
@@ -28,8 +28,8 @@ public class DataSourceCreator {
     /**
      * druid 连接池创建数据源
      *
-     * @param itemProperties
-     * @return
+     * @param itemProperties 数据源配置类
+     * @return 数据源
      */
     public DataSource create(DataSourceItemProperties itemProperties) {
         DruidDataSource ds = null;

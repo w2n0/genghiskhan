@@ -40,12 +40,11 @@ public class ReflectUtil {
      * 获取接口方法的参数名（抽象方法也可以）
      * 编译时增加参数  -parameters
      *
-     * @param method
-     * @return
-     * @throws IOException
+     * @param method 方法名
+     * @return 参数名集合
+     * @throws IOException io异常
      */
     public static List<String> getInterfaceMethodParamNames(final Method method) throws IOException {
-        final Class<?>[] methodParameterTypes = method.getParameterTypes();
         final List<String> methodParametersNames = new ArrayList<>();
         final String className = method.getDeclaringClass().getName();
         ClassReader cr = new ClassReader(className);
@@ -53,7 +52,6 @@ public class ReflectUtil {
             @Override
             public MethodVisitor visitMethod(int access, String name, String descriptor, String signature, String[] exceptions) {
                 final Type[] args = Type.getArgumentTypes(descriptor);
-                // 方法名相同并且参数个数相同
                 if (!name.equals(method.getName()) || !matchTypes(args, method.getParameterTypes())) {
                     return super.visitMethod(access, name, descriptor, signature, exceptions);
                 }

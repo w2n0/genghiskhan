@@ -16,8 +16,8 @@ public class CompressUtils {
     /***
      * 压缩GZip
      *
-     * @param data
-     * @return
+     * @param data 元数据
+     * @return byte数组
      */
     public static byte[] gZip(byte[] data) {
         byte[] b = null;
@@ -38,8 +38,8 @@ public class CompressUtils {
     /***
      * 解压GZip
      *
-     * @param data
-     * @return
+     * @param data 源数据
+     * @return byte数组
      */
     public static byte[] unGzip(byte[] data) {
         byte[] b = null;
@@ -67,8 +67,8 @@ public class CompressUtils {
     /***
      * 压缩Zip
      *
-     * @param data
-     * @return
+     * @param data 源数据
+     * @return byte数组
      */
     public static byte[] zip(byte[] data) {
         byte[] b = null;
@@ -92,8 +92,8 @@ public class CompressUtils {
     /***
      * 解压Zip
      *
-     * @param data
-     * @return
+     * @param data 源数据
+     * @return byte数组
      */
     public static byte[] unZip(byte[] data) {
         byte[] b = null;
@@ -123,8 +123,8 @@ public class CompressUtils {
     /***
      * 压缩BZip2
      *
-     * @param data
-     * @return
+     * @param data 源数据
+     * @return byte数组
      */
     public static byte[] bZip2(byte[] data) {
         byte[] b = null;
@@ -145,8 +145,8 @@ public class CompressUtils {
     /***
      * 解压BZip2
      *
-     * @param data
-     * @return
+     * @param data 源数据
+     * @return byte数组
      */
     public static byte[] unBzip2(byte[] data) {
         byte[] b = null;
@@ -174,8 +174,8 @@ public class CompressUtils {
     /**
      * 把字节数组转换成16进制字符串
      *
-     * @param bArray
-     * @return
+     * @param bArray 源数据
+     * @return 16紧致字符串
      */
     public static String bytesToHexString(byte[] bArray) {
         StringBuffer sb = new StringBuffer(bArray.length);
@@ -189,6 +189,5 @@ public class CompressUtils {
         }
         return sb.toString();
     }
-
 
 }

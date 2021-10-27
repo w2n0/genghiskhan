@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * @author 无量
- * @date: 2021/7/19 14:29
+ * date: 2021/7/19 14:29
  */
 
 public abstract class BaseCommand implements Serializable {

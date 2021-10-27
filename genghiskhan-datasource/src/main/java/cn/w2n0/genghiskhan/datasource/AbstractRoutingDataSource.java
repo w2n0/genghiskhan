@@ -151,8 +151,7 @@ public abstract class AbstractRoutingDataSource extends AbstractDataSource imple
     }
 
     /**
-     * 目标数据源
-     * @return
+     * @return 目标数据源
      */
     protected abstract Object determineCurrentLookupKey();
 }

@@ -8,7 +8,7 @@ package cn.w2n0.genghiskhan.utils.file;
 public interface IFileHandle {
     /**
      * 处理者
-     * @param line
+     * @param line 数据行
      */
     void handle(String line);
 }

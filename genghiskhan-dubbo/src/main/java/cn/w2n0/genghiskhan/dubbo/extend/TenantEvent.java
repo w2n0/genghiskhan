@@ -15,7 +15,7 @@ public class TenantEvent {
 
     /**
      * 下发
-     * @param tenantEntity
+     * @param tenantEntity 租户实体
      */
     public void publishEvent(TenantEntity tenantEntity) {
         // 发布下单事件

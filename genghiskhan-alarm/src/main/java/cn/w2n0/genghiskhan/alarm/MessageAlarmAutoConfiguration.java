@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 消息报警配置
  * @author 无量
- * @date 2021/10/8 19:21
+ * date 2021/10/8 19:21
  */
 @Configuration
 public class MessageAlarmAutoConfiguration {

@@ -316,7 +316,7 @@ public class ConvertUtils
      * 转换为Integer数组<br>
      * 
      * @param split 分隔符
-     * @param split 被转换的值
+     * @param str 被转换的值
      * @return 结果
      */
     public static Integer[] toIntArray(String split, String str)
@@ -373,7 +373,7 @@ public class ConvertUtils
      * 转换为String数组<br>
      * 
      * @param split 分隔符
-     * @param split 被转换的值
+     * @param str 被转换的值
      * @return 结果
      */
     public static String[] toStrArray(String split, String str)
@@ -598,10 +598,11 @@ public class ConvertUtils
     /**
      * 转换为Enum对象<br>
      * 如果给定的值为空，或者转换失败，返回默认值<br>
-     * 
+     *
      * @param clazz Enum的Class
      * @param value 值
      * @param defaultValue 默认值
+     * @param <E> 泛型
      * @return Enum
      */
     public static <E extends Enum<E>> E toEnum(Class<E> clazz, Object value, E defaultValue)
@@ -637,6 +638,7 @@ public class ConvertUtils
      * 
      * @param clazz Enum的Class
      * @param value 值
+     * @param <E> 泛型
      * @return Enum
      */
     public static <E extends Enum<E>> E toEnum(Class<E> clazz, Object value)

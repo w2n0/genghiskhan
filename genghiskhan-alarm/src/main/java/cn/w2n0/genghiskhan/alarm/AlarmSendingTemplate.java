@@ -12,7 +12,7 @@ import java.util.concurrent.*;
  * 报警服务
  *
  * @author 无量
- * @date 2021/10/20 14:24
+ * date 2021/10/20 14:24
  */
 public class AlarmSendingTemplate {
 
@@ -34,8 +34,9 @@ public class AlarmSendingTemplate {
     /**
      * 同步发送消息
      *
-     * @param subject
-     * @param text
+     * @param tos 邮箱地址列表
+     * @param subject 主题
+     * @param text 内容
      */
     public void syncsendMail(String[] tos, String subject, String text) {
         mailSending.send(tos, subject, text);
@@ -44,8 +45,9 @@ public class AlarmSendingTemplate {
     /**
      * 异步发送消息
      *
-     * @param subject
-     * @param text
+     * @param tos 邮箱地址列表
+     * @param subject 主题
+     * @param text 内容
      */
     public void asyncSendMail(String[] tos, String subject, String text) {
         executorService.execute(new Runnable() {
@@ -58,8 +60,8 @@ public class AlarmSendingTemplate {
 
     /**
      * 发送钉钉消息
-     * @param msgEntity
-     * @param webHook
+     * @param msgEntity 消息实体
+     * @param webHook webhook
      */
     public void sendDingTalk(MsgEntity msgEntity, String webHook) {
         DingdingUtils.sendToDingding(msgEntity.getJSONObjectString(), webHook);
@@ -67,8 +69,8 @@ public class AlarmSendingTemplate {
 
     /**
      * 异步发送钉钉消息
-     * @param msgEntity
-     * @param webHook
+     * @param msgEntity 消息实体
+     * @param webHook webhook
      */
     public void asyncSendDingTalk(MsgEntity msgEntity, String webHook) {
         executorService.execute(new Runnable() {

@@ -20,7 +20,7 @@ public class SnowFlakeGenerate implements SnGenerate {
 
     /**
      * 单例
-     * @return
+     * @return SnowFlakeGenerate
      */
     public static SnowFlakeGenerate getInstance(){
         if (ins == null){

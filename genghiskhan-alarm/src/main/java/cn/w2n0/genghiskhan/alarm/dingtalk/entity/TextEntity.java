@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * @author 无量
- * @date 2021/10/22 11:52
+ * date 2021/10/22 11:52
  */
 @Getter
 public class TextEntity implements MsgEntity{

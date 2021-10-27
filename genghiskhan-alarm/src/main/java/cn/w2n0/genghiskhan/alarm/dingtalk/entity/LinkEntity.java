@@ -6,7 +6,7 @@ import lombok.Setter;
 
 /**
  * @author 无量
- * @date 2021/10/22 11:58
+ * date 2021/10/22 11:58
  */
 @Getter
 public class LinkEntity implements MsgEntity {

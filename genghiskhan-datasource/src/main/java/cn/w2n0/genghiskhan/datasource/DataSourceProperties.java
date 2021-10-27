@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 数据源属性
  * @author 无量
- * @date 2021/10/20 14:24
+ * date 2021/10/20 14:24
  */
 @ConfigurationProperties(prefix = "genghiskhan.datasource")
 @Data

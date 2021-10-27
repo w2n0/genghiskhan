@@ -24,7 +24,7 @@ import java.util.Map;
 /**
  * 数据源配置
  * @author 无量
- * @date 2021/10/20 14:24
+ * date 2021/10/20 14:24
  */
 @Configuration
 @EnableConfigurationProperties({DataSourceProperties.class})

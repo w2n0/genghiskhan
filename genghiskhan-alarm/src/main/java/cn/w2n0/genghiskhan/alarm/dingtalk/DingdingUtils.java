@@ -14,7 +14,7 @@ import java.net.URI;
 
 /**
  * @author 无量
- * @date 2021/10/21 18:03
+ * date 2021/10/21 18:03
  */
 public class DingdingUtils {
 
@@ -29,7 +29,7 @@ public class DingdingUtils {
      * 发送钉钉消息
      * @param jsonString 消息内容
      * @param webhook 钉钉自定义机器人webhook
-     * @returnv
+     * @return 发送成功:true
      */
     public static boolean sendToDingding(String jsonString, String webhook) {
         HttpHeaders headers = new HttpHeaders();

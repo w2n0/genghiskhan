@@ -24,10 +24,10 @@ public class Result<T> implements Serializable {
     }
 
     /**
-     * @param success
-     * @param code
-     * @param msg
-     * @param result
+     * @param success 成功标记
+     * @param code 错误码
+     * @param msg 错误消息
+     * @param result 返回内容
      */
     public Result(boolean success, int code, String msg, T result) {
         this.success = success;
@@ -36,6 +36,10 @@ public class Result<T> implements Serializable {
         this.result = result;
     }
 
+    /**
+     * @param code 错误码
+     * @param msg 错误消息
+     */
     public Result(int code, String msg) {
         this.success = false;
         this.code = code;
@@ -43,6 +47,9 @@ public class Result<T> implements Serializable {
         this.result = null;
     }
 
+    /**
+     * @param result 处理结果
+     */
     public Result(T result) {
         this.success = true;
         this.code = 0;
@@ -84,9 +91,9 @@ public class Result<T> implements Serializable {
 
     /**
      * 成功
-     * @param t
-     * @param <T>
-     * @return
+     * @param t 结果
+     * @param <T> 泛型
+     * @return Result
      */
     public static <T> Result<T> sucess(T t) {
         Result result = new Result();
@@ -98,8 +105,8 @@ public class Result<T> implements Serializable {
 
     /**
      * 成功
-     * @param <T>
-     * @return
+     * @param <T> 泛型
+     * @return Result
      */
     public static <T> Result<T> sucess() {
         Result result = new Result();
@@ -110,9 +117,9 @@ public class Result<T> implements Serializable {
 
     /**
      * 失败
-     * @param code
-     * @param <T>
-     * @return
+     * @param code 错误码
+     * @param <T> 泛型
+     * @return Result
      */
     public static <T> Result<T> failed(int code) {
         Result result = new Result();
@@ -122,9 +129,9 @@ public class Result<T> implements Serializable {
     }
     /**
      * 失败
-     * @param msg
-     * @param <T>
-     * @return
+     * @param msg 错误消息
+     * @param <T> 泛型
+     * @return Result
      */
     public static <T> Result<T> failed(String msg) {
         Result result = new Result();

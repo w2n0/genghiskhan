@@ -9,14 +9,14 @@ import java.util.Map;
 
 /**
  * @author 无量
- * @date: 2021/3/22 14:16
+ * date: 2021/3/22 14:16
  */
 public class HttpParamsUtils    {
     /**
      * request to map
      *
-     * @param request
-     * @return
+     * @param request HttpServletRequest
+     * @return map
      */
     public static Map<String, Object> requestParamsToMap(HttpServletRequest request) {
         Map<String, Object> param = new HashMap<>(10);

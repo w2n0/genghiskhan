@@ -8,14 +8,14 @@ import java.util.Map;
 /**
  * 日期时间对象
  * @author 无量
- * @date: 2021/2/22 18:55
+ * date: 2021/2/22 18:55
  */
 public class DateUtils {
     /**
      * 二分法分割开始和结束时间
-     * @param starttime
-     * @param endtime
-     * @return
+     * @param starttime 开始时间
+     * @param endtime 结束时间
+     * @return 分割时间map
      */
     public static Map<Date,Date> dichotomyDate(Date starttime,Date endtime){
         Map<Date, Date> times = new HashMap(10);

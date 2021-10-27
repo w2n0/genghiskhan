@@ -16,7 +16,7 @@ public class FileUtils
      * 
      * @param filePath 文件路径
      * @param os 输出流
-     * @return
+     * @throws IOException io异常
      */
     public static void writeBytes(String filePath, OutputStream os) throws IOException
     {
@@ -71,7 +71,7 @@ public class FileUtils
      * 删除文件
      * 
      * @param filePath 文件
-     * @return
+     * @return 是否删除成功
      */
     public static boolean deleteFile(String filePath)
     {

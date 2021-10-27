@@ -11,7 +11,7 @@ import java.security.SecureRandom;
  * Aes对称加密
  *
  * @author 无量
- * @date 2021-01-12
+ * date 2021-01-12
  */
 public class AesUtil {
 
@@ -22,7 +22,7 @@ public class AesUtil {
      *
      * @param encodeRules 密钥
      * @param content     明文
-     * @return
+     * @return 密钥
      */
     public static String aesEncode(String encodeRules, String content) {
         try {
@@ -51,7 +51,7 @@ public class AesUtil {
      *
      * @param encodeRules 密钥
      * @param content     密文
-     * @return
+     * @return 明文
      */
     public static String aesDecode(String encodeRules, String content) {
         try {

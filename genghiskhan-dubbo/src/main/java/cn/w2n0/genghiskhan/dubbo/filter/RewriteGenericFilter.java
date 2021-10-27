@@ -249,10 +249,10 @@ public class RewriteGenericFilter implements Filter, Filter.Listener {
     }
 
     /**
-     * 判断一个类是否为基本数据类型。
-     *
-     * @param clazz 要判断的类。
-     * @return true 表示为基本数据类型。
+     * 判断一个类是否为基本数据类型
+     * @param clazz 要判断的类
+     * @return 基本数据类型返回true
+     * @throws Exception 异常
      */
     public static boolean isBaseDataType(Class clazz) throws Exception {
         return

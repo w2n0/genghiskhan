@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * @author 无量
- * @date 2021/10/22 14:26
+ * date 2021/10/22 14:26
  */
 @Getter
 public class MarkdownEntity implements MsgEntity{

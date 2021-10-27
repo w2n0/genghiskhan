@@ -5,15 +5,15 @@ import java.util.List;
 
 /**
  * @author 无量
- * @date: 2021/4/28 15:20
+ * date: 2021/4/28 15:20
  */
 public class CollectUtils {
     /**
      * 切分list
      *
-     * @param sourceList
+     * @param sourceList 源列表
      * @param groupSize  每组定长
-     * @return
+     * @return 切分列表
      */
     public static List<List> splitList(List sourceList, int groupSize) {
         int length = sourceList.size();

@@ -15,8 +15,11 @@ public class SqlUtil
      */
     public static String SQL_PATTERN = "[a-zA-Z0-9_\\ \\,\\.]+";
 
+
     /**
      * 检查字符，防止注入绕过
+     * @param value 字符串
+     * @return 字符串
      */
     public static String escapeOrderBySql(String value)
     {
@@ -29,6 +32,8 @@ public class SqlUtil
 
     /**
      * 验证 order by 语法是否符合规范
+     * @param value 字符串
+     * @return 是否合规
      */
     public static boolean isValidOrderBySql(String value)
     {

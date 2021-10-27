@@ -5,16 +5,16 @@ import java.util.List;
 
 /**
  * 集合转换类
- *
  * @author 无量
+ * data:2020-10-01
  */
 public class CollectUtils {
     /**
      * 切分list
      *
-     * @param sourceList
+     * @param sourceList 源列表
      * @param groupSize  每组定长
-     * @return
+     * @return 列表
      */
     public static List<List> splitList(List sourceList, int groupSize) {
         int length = sourceList.size();

@@ -10,7 +10,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 /**
  * springCache自动配置
  * @author 无量
- * @date 2021/10/20 14:24
+ * date 2021/10/20 14:24
  */
 @Configuration
 @EnableCaching

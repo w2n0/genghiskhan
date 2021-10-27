@@ -20,8 +20,11 @@ import java.io.IOException;
 public class ServletUtils
 {
 
+
     /**
      * 获取String参数
+     * @param name 参数名
+     * @return 参数值
      */
     public static String getParameter(String name)
     {
@@ -32,6 +35,9 @@ public class ServletUtils
     public static final String KEY3=".xml";
     /**
      * 获取String参数
+     * @param name 参数名
+     * @param defaultValue 默认值
+     * @return 参数值
      */
     public static String getParameter(String name, String defaultValue)
     {
@@ -40,6 +46,8 @@ public class ServletUtils
 
     /**
      * 获取Integer参数
+     * @param name 参数名
+     * @return 参数值
      */
     public static Integer getParameterToInt(String name)
     {
@@ -48,6 +56,9 @@ public class ServletUtils
 
     /**
      * 获取Integer参数
+     * @param name 参数名
+     * @param defaultValue 默认值
+     * @return 参数值
      */
     public static Integer getParameterToInt(String name, Integer defaultValue)
     {
@@ -56,6 +67,7 @@ public class ServletUtils
 
     /**
      * 获取request
+     * @return HttpServletRequest
      */
     public static HttpServletRequest getRequest()
     {
@@ -64,6 +76,7 @@ public class ServletUtils
 
     /**
      * 获取response
+     * @return HttpServletResponse
      */
     public static HttpServletResponse getResponse()
     {
@@ -72,12 +85,17 @@ public class ServletUtils
 
     /**
      * 获取session
+     * @return HttpSession
      */
     public static HttpSession getSession()
     {
         return getRequest().getSession();
     }
 
+    /**
+     * 获取请求参数
+     * @return ServletRequestAttributes
+     */
     public static ServletRequestAttributes getRequestAttributes()
     {
         RequestAttributes attributes = RequestContextHolder.getRequestAttributes();
@@ -110,7 +128,8 @@ public class ServletUtils
     /**
      * 是否是Ajax异步请求
      * 
-     * @param request
+     * @param request HttpServletRequest
+     * @return 是否Ajax
      */
     public static boolean isAjaxRequest(HttpServletRequest request)
     {

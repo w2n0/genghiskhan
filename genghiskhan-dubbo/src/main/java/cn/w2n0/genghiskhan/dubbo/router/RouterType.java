@@ -2,7 +2,7 @@ package cn.w2n0.genghiskhan.dubbo.router;
 
 /**
  * @author 无量
- * @date: 2021/5/6 11:32
+ * date: 2021/5/6 11:32
  */
 public enum RouterType {
     /**

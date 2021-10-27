@@ -8,7 +8,7 @@ import org.slf4j.MDC;
 /**
  * dubbo添加调用链Id
  * @author 无量
- * @date: 2021/3/22 10:58
+ * date: 2021/3/22 10:58
  */
 @Activate(group = {CommonConstants.PROVIDER, CommonConstants.CONSUMER})
 public class DubboTraceIdFilter implements Filter {

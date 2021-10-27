@@ -14,18 +14,18 @@ public interface GenericService {
      * @param version 服务版本
      * @param method 服务方法
      * @param paramsMap 参数
-     * @return
+     * @return 返回结果
      */
     Object exec(String service, String version, String method, Map<String, Object> paramsMap);
 
 
     /**
      调用返回Json对象
-     * @param service
-     * @param version
-     * @param method
-     * @param paramsMap
-     * @return
+     * @param service   服务接口
+     * @param version   服务版本
+     * @param method    服务方法
+     * @param paramsMap 参数
+     * @return json串
      */
     String execToJson(String service, String version, String method, Map<String, Object> paramsMap);
 
