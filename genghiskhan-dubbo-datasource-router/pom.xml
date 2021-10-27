@@ -5,17 +5,12 @@
     <parent>
         <artifactId>genghiskhan</artifactId>
         <groupId>cn.w2n0.genghiskhan</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>genghiskhan-dubbo-datasource-router</artifactId>
-
-    <name>genghiskhan-datasource-router</name>
-    <!-- FIXME change it to the project's website -->
+    <name>${project.groupId}:${project.artifactId}</name>
     <url>http://www.example.com</url>
-
-
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
