@@ -56,7 +56,7 @@ class DingdingUtilsTest {
     void sendCart() {
         String title="星网，流水线[ERP订单写入SAP错误]";
         String content="任务[SAP订单写入]:  \n <font color=\"red\">模型循环计划，得到的模型不可执行 </font>";
-        ActionCardEntity actionCardEntity=new ActionCardEntity(title, content,  "查看详情", "http://www.baidu.com");
+        ActionCardEntity actionCardEntity=new ActionCardEntity(title, content,  "查看详情", "http://www.xxx.com");
         boolean result=DingdingUtils.sendToDingding(actionCardEntity.getJSONObjectString(),webHook);
         assertTrue(result);
     }
