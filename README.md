@@ -35,7 +35,7 @@ Provides generic entity objects such as paging, base exceptions, and so on
 <dependency>
     <groupId>cn.w2n0.genghiskhan</groupId>
     <artifactId>genghiskhan-datasource</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 **Yml**
@@ -83,7 +83,7 @@ DynamicDataSourceContextHolder.setDataSource("001");
 <dependency>
     <groupId>cn.w2n0.genghiskhan</groupId>
     <artifactId>genghiskhan-dubbo</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
@@ -282,7 +282,7 @@ public enum ResultError {
 <dependency>
     <groupId>cn.w2n0.genghiskhan</groupId>
     <artifactId>genghiskhan-alarm</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 **Yml**
@@ -336,7 +336,7 @@ spring:
 <dependency>
     <groupId>cn.w2n0.genghiskhan</groupId>
     <artifactId>genghiskhan-sequence</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 **Java**
