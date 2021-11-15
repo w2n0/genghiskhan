@@ -17,6 +17,7 @@
         <module>genghiskhan-sequence</module>
         <module>genghiskhan-util</module>
         <module>genghiskhan-alarm</module>
+        <module>genghiskhan-swagger</module>
     </modules>
     <name>${project.groupId}:${project.artifactId}</name>
     <url>http://www.example.com</url>
@@ -50,6 +51,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <springboot.version>2.2.5.RELEASE</springboot.version>
         <druid.version>1.1.22</druid.version>
+        <knife4j.version>2.0.8</knife4j.version>
         <rocketmq.version>4.7.0</rocketmq.version>
         <mybatis-generator-maven-plugin.version>1.3.2</mybatis-generator-maven-plugin.version>
         <lombok.version>1.18.20</lombok.version>
@@ -93,7 +95,7 @@
         <nacos-config-spring-boot-starter.version>0.2.7</nacos-config-spring-boot-starter.version>
     </properties>
     <dependencyManagement>
-    <dependencies>
+        <dependencies>
             <dependency>
                 <groupId>cn.w2n0.genghiskhan</groupId>
                 <artifactId>genghiskhan-dubbo-datasource-router</artifactId>
@@ -420,7 +422,7 @@
             <dependency>
                 <groupId>com.aliyun</groupId>
                 <artifactId>cola-core</artifactId>
-                <version>${cola.version}</version>
+                  <version>${cola.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
@@ -453,6 +455,7 @@
         </repository>
     </distributionManagement>
     <build>
+     <!--   <pluginManagement>-->
         <plugins>
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
@@ -506,6 +509,7 @@
                 </executions>
             </plugin>
         </plugins>
+        <!--</pluginManagement>-->
     </build>
 </project>
 
