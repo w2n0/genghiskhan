@@ -455,7 +455,7 @@
         </repository>
     </distributionManagement>
     <build>
-     <!--   <pluginManagement>-->
+        <pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
@@ -509,7 +509,7 @@
                 </executions>
             </plugin>
         </plugins>
-        <!--</pluginManagement>-->
+        </pluginManagement>
     </build>
 </project>
 

@@ -39,15 +39,17 @@ public class SetCache {
         redisTemplate.opsForSet().remove(key, value);
     }
 
+
     /**
      * 判断是否包含  sismember
      *
      * @param key 键
      * @param value 值
-     * @param <T> 泛型对象
+     * @param <T> 值
+     * @return 是否包含
      */
-    public <T> void contains(String key, T value) {
-        redisTemplate.opsForSet().isMember(key, value);
+    public <T> boolean contains(String key, T value) {
+        return redisTemplate.opsForSet().isMember(key, value);
     }
 
     /**

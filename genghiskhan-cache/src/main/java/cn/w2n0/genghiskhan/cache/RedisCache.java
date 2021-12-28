@@ -2,6 +2,7 @@ package cn.w2n0.genghiskhan.cache;
 
 import lombok.Getter;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.SetOperations;
 import org.springframework.data.redis.core.ValueOperations;
 
 import java.util.Collection;
@@ -147,9 +148,16 @@ public class RedisCache {
      * @param <T> 泛型对象
      * @return 缓存数据的对象
      */
-    public <T> long     setCacheSet(final String key, final Set<T> dataSet) {
-        Long count = redisTemplate.opsForSet().add(key, dataSet);
-        return count == null ? 0 : count;
+    public <T> long   setCacheSet(final String key, final Set<T> dataSet) {
+        if(dataSet!=null)
+        {
+            SetOperations<String, T> set= redisTemplate.opsForSet();
+            dataSet.forEach((s)->{
+                set.add(key,s);
+            });
+            return dataSet.size();
+        }
+        return 0;
     }
 
     /**

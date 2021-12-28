@@ -105,10 +105,9 @@ public class Result<T> implements Serializable {
 
     /**
      * 成功
-     * @param <T> 泛型
      * @return Result
      */
-    public static <T> Result<T> sucess() {
+    public static  Result sucess() {
         Result result = new Result();
         result.setCode(SUCCESSCODE);
         result.setSuccess(true);
@@ -118,10 +117,9 @@ public class Result<T> implements Serializable {
     /**
      * 失败
      * @param code 错误码
-     * @param <T> 泛型
      * @return Result
      */
-    public static <T> Result<T> failed(int code) {
+    public static Result failed(int code) {
         Result result = new Result();
         result.setSuccess(false);
         result.setCode(code);
@@ -130,12 +128,24 @@ public class Result<T> implements Serializable {
     /**
      * 失败
      * @param msg 错误消息
-     * @param <T> 泛型
      * @return Result
      */
-    public static <T> Result<T> failed(String msg) {
+    public static Result failed(String msg) {
         Result result = new Result();
         result.setSuccess(false);
+        result.setMsg(msg);
+        return result;
+    }
+    /**
+     * 失败
+     * @param code 错误码
+     * @param msg 错误消息
+     * @return Result
+     */
+    public static  Result failed(int code,String msg) {
+        Result result = new Result();
+        result.setSuccess(false);
+        result.setCode(code);
         result.setMsg(msg);
         return result;
     }
