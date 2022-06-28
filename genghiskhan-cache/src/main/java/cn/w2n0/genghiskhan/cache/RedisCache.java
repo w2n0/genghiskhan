@@ -4,11 +4,9 @@ import lombok.Getter;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.SetOperations;
 import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.data.redis.core.script.DefaultRedisScript;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -252,5 +250,48 @@ public class RedisCache {
         ValueOperations<String, T> operation = redisTemplate.opsForValue();
         return operation.multiGet(keys);
     }
+    /**
+     * lua 脚本
+     */
+    public static final String LUA_SCRIPT = "return redis.call('cl.throttle',KEYS[1], ARGV[1], ARGV[2], ARGV[3], ARGV[4])";
 
+    /**
+     * 测试
+     *
+     * @param key
+     * @param maxBurst
+     * @param countPerPeriod
+     * @param period
+     * @param quantity
+     * @return
+     */
+    public boolean redisCellDemo(String key, int maxBurst, int countPerPeriod, int period, int quantity) {
+        try {
+            DefaultRedisScript<List> script = new DefaultRedisScript<>(LUA_SCRIPT, List.class);
+            /**
+             * KEYS[1]需要设置的key值，可以结合业务需要
+             * ARGV[1]参数是漏斗的大小 最大爆发
+             * ARGV[2]频率次数，结合ARGV[3]一起使用
+             * ARGV[3]周期（秒），结合ARGV[2]一起使用
+             *      最后的速率就是ARGV[2]次/ARGV[3]秒
+             * ARGV[4]申请令牌数，默认是1
+             */
+            List<Long> rst = (List<Long>) redisTemplate.execute(script, Arrays.asList(key), maxBurst, countPerPeriod, period, quantity);
+
+            /**
+             * 1. 动作是否受限：
+             *   0 表示允许该操作。
+             *   1 表示该操作受到限制/阻止。
+             * 2. 密钥的总限制 (max_burst+1)。这相当于常见的X-RateLimit-Limit HTTP返回头。
+             * 3. 密钥的剩余限制。相当于X-RateLimit-Remaining。
+             * 4. 用户应重试之前的秒数，-1如果允许操作，则始终如此。相当于Retry-After。
+             * 5. 限制将重置为其最大容量之前的秒数。相当于X-RateLimit-Reset。
+             */
+            //这里只关注第一个元素0表示正常，1表示过载
+            return rst.get(0) == 0;
+        } catch (Exception e) {
+
+            return false;
+        }
+    }
 }

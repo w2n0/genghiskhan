@@ -15,6 +15,4 @@ import java.util.List;
 public class DataSourceProperties {
     @NotNull
     private List<DataSourceItemProperties> items;
-
-
 }

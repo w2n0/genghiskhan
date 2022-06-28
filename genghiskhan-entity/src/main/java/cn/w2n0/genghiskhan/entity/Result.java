@@ -113,7 +113,19 @@ public class Result<T> implements Serializable {
         result.setSuccess(true);
         return result;
     }
-
+    /**
+     * 失败
+     * @param code 错误码
+     * @param msg 错误消息
+     * @return Result
+     */
+    public static  Result failed(int code,String msg) {
+        Result result = new Result();
+        result.setSuccess(false);
+        result.setCode(code);
+        result.setMsg(msg);
+        return result;
+    }
     /**
      * 失败
      * @param code 错误码
@@ -136,17 +148,5 @@ public class Result<T> implements Serializable {
         result.setMsg(msg);
         return result;
     }
-    /**
-     * 失败
-     * @param code 错误码
-     * @param msg 错误消息
-     * @return Result
-     */
-    public static  Result failed(int code,String msg) {
-        Result result = new Result();
-        result.setSuccess(false);
-        result.setCode(code);
-        result.setMsg(msg);
-        return result;
-    }
+
 }

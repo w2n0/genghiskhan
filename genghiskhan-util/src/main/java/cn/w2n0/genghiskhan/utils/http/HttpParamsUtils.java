@@ -1,6 +1,7 @@
 package cn.w2n0.genghiskhan.utils.http;
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -36,6 +37,49 @@ public class HttpParamsUtils {
             }
         }
         return param;
+    }
+
+    /**
+     * request to map
+     *
+     * @param request HttpServletRequest
+     * @return map
+     */
+    public static MultiValueMap<String, String> requestParamsToMultiValueMap(HttpServletRequest request) {
+        MultiValueMap<String, String> reqeustParams = new LinkedMultiValueMap<>();
+        Enumeration e = request.getParameterNames();
+        while (e.hasMoreElements()) {
+            String name = (String) e.nextElement();
+            if (null != request.getParameter(name)) {
+                try {
+                    String[] values = request.getParameterValues(name);
+                    for (String value : values) {
+                        value = value.replaceAll("%", "%25");
+                        reqeustParams.add(name, value == null ? "" : value);
+
+                    }
+                } catch (Exception e1) {
+                    throw new RuntimeException(e1);
+                }
+            }
+        }
+        return reqeustParams;
+    }
+
+    /**
+     * headers to map
+     *
+     * @param headers headers
+     * @return map
+     */
+    public static MultiValueMap<String, String> headersToMultiValueMap(HttpHeaders headers) {
+        MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
+        headers.entrySet().stream().forEach(kv -> {
+            for (String value : kv.getValue()) {
+                params.add(kv.getKey(), value == null ? "" : value);
+            }
+        });
+        return params;
     }
 
     /**

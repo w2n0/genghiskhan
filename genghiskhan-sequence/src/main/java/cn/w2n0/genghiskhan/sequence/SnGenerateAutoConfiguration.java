@@ -11,6 +11,6 @@ import org.springframework.context.annotation.Configuration;
 public class SnGenerateAutoConfiguration {
     @Bean
     public SnGenerate getGenerate() {
-        return new SnowFlakeGenerate();
+        return SnowFlakeGenerate.getInstance();
     }
 }
