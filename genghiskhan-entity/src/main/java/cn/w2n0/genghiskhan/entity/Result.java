@@ -95,7 +95,7 @@ public class Result<T> implements Serializable {
      * @param <T> 泛型
      * @return Result
      */
-    public static <T> Result<T> sucess(T t) {
+    public static <T> Result<T> success(T t) {
         Result result = new Result();
         result.setCode(SUCCESSCODE);
         result.setSuccess(true);
@@ -107,7 +107,7 @@ public class Result<T> implements Serializable {
      * 成功
      * @return Result
      */
-    public static  Result sucess() {
+    public static  Result success() {
         Result result = new Result();
         result.setCode(SUCCESSCODE);
         result.setSuccess(true);
