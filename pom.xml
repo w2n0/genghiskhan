@@ -6,7 +6,7 @@
     <groupId>cn.w2n0.genghiskhan</groupId>
     <artifactId>genghiskhan</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.2</version>
+    <version>1.0.1</version>
     <description>${project.groupId}:${project.artifactId}</description>
     <modules>
         <module>genghiskhan-cache</module>
@@ -18,6 +18,7 @@
         <module>genghiskhan-util</module>
         <module>genghiskhan-alarm</module>
         <module>genghiskhan-swagger</module>
+        <module>genghiskhan-common</module>
     </modules>
     <name>${project.groupId}:${project.artifactId}</name>
     <url>http://www.example.com</url>
@@ -93,6 +94,7 @@
         <cola.version>3.0.0</cola.version>
         <okhttp.version>4.9.2</okhttp.version>
         <nacos-config-spring-boot-starter.version>0.2.7</nacos-config-spring-boot-starter.version>
+        <util.version>1.0.2</util.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -109,7 +111,7 @@
             <dependency>
                 <groupId>cn.w2n0.genghiskhan</groupId>
                 <artifactId>genghiskhan-util</artifactId>
-                <version>${project.version}</version>
+                <version>${util.version}</version>
             </dependency>
             <dependency>
                 <groupId>cn.w2n0.genghiskhan</groupId>
@@ -120,6 +122,11 @@
                 <groupId>cn.w2n0.genghiskhan</groupId>
                 <artifactId>genghiskhan-entity</artifactId>
                 <version>1.0.2</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.w2n0.genghiskhan</groupId>
+                <artifactId>genghiskhan-swagger</artifactId>
+                <version>1.0.1</version>
             </dependency>
             <dependency>
                 <groupId>cn.w2n0.genghiskhan</groupId>
@@ -379,27 +386,6 @@
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid-spring-boot-starter.version}</version>
             </dependency>
-            <dependency>
-                <groupId>org.mybatis.generator</groupId>
-                <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>${mybatis-generator-maven-plugin.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>
-                            com.google.code.google-collections
-                        </groupId>
-                        <artifactId>google-collect</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.sonatype.sisu</groupId>
-                        <artifactId>sisu-guava</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>log4j</groupId>
-                        <artifactId>log4j</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
             <!-- pagehelper 分页插件 -->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
@@ -422,7 +408,7 @@
             <dependency>
                 <groupId>com.aliyun</groupId>
                 <artifactId>cola-core</artifactId>
-                  <version>${cola.version}</version>
+                <version>${cola.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
@@ -437,11 +423,7 @@
                 <version>${commons-io.version}</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
-            <dependency>
-                <groupId>com.squareup.okhttp3</groupId>
-                <artifactId>okhttp</artifactId>
-                <version>${okhttp.version}</version>
-            </dependency>
+
         </dependencies>
     </dependencyManagement>
     <distributionManagement>
@@ -455,7 +437,7 @@
         </repository>
     </distributionManagement>
     <build>
-        <pluginManagement>
+        <!--<pluginManagement>-->
         <plugins>
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
@@ -491,6 +473,9 @@
                         <goals>
                             <goal>jar</goal>
                         </goals>
+                        <!--         <configuration>
+                                     <additionalparam>-Xdoclint:none</additionalparam>
+                                 </configuration>-->
                     </execution>
                 </executions>
             </plugin>
@@ -509,7 +494,7 @@
                 </executions>
             </plugin>
         </plugins>
-        </pluginManagement>
+        <!--</pluginManagement>-->
     </build>
 </project>
 
